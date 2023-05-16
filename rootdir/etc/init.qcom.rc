@@ -251,6 +251,10 @@ on boot
     # limit discard size to 128MB in order to avoid long IO latency
     write /sys/block/sda/queue/discard_max_bytes 134217728
 
+    # Double Tap Sensor
+    chown system system /sys/devices/platform/soc/990000.spi/spi_master/spi1/spi1.0/double_tap_pressed
+    chmod 0660 /sys/devices/platform/soc/990000.spi/spi_master/spi1/spi1.0/double_tap_pressed
+
     # Enable qcrild and data services
     enable vendor.qcrild
     enable vendor.qcrild2

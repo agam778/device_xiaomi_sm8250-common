@@ -489,6 +489,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0 \
     android.hardware.sensors@1.0-impl \
@@ -496,6 +499,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libsensorndkbridge
+
+PRODUCT_PACKAGES += \
+    sensors.xiaomi
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
